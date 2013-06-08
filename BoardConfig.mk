@@ -1,3 +1,5 @@
+#TARGET_SPECIFIC_HEADER_PATH := device/huawei/hws7300u/include
+
 # Bootloader, radio
 TARGET_NO_BOOTLOADER := true
 TARGET_NO_RADIOIMAGE := true
@@ -46,11 +48,13 @@ BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_BCM := true
 
 # QCOM hardware
+BOARD_USES_QCOM_HARDWARE := true
 TARGET_QCOM_DISPLAY_VARIANT := legacy
 TARGET_QCOM_AUDIO_VARIANT := caf
-BOARD_USES_LEGACY_QCOM := true
+BOARD_USES_LEGACY_OVERLAY := true
 BOARD_USES_LEGACY_MEDIA := true
-BOARD_USES_QCOM_HARDWARE := true
+BOARD_USES_LEGACY_QCOM := true
+TARGET_QCOM_HDMI_OUT := true
 TARGET_QCOM_HDMI_RESOLUTION_AUTO := true
 
 # GPS
@@ -59,10 +63,15 @@ BOARD_VENDOR_QCOM_GPS_LOC_API_AMSS_VERSION := 50000
 BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := default
 
 # Graphics
+COMMON_GLOBAL_CFLAGS += -DQCOM_NO_SECURE_PLAYBACK
 USE_OPENGL_RENDERER := true
+TARGET_NO_HW_VSYNC := true
 TARGET_USES_C2D_COMPOSITION := true
 TARGET_USES_PMEM := true
 BOARD_EGL_CFG := device/huawei/hws7300u/prebuilt/etc/egl.cfg
+
+# Lights
+#TARGET_PROVIDES_LIBLIGHT := true
 
 # Webkit
 ENABLE_WEBGL := true
@@ -78,10 +87,11 @@ COMMON_GLOBAL_CFLAGS += -DICS_CAMERA_BLOB
 BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=hws7300u vmalloc=578M kgsl.ptcount=16
 BOARD_KERNEL_BASE := 0x40300000
 BOARD_KERNEL_PAGESIZE := 2048
+#TARGET_PREBUILT_KERNEL := device/huawei/hws7300u/kernel
 TARGET_KERNEL_SOURCE := kernel/huawei/hws7300u
 TARGET_KERNEL_CONFIG := mediapad_defconfig
 
-# USB
+# Usb connection to PC
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/class/android_usb/android0/f_mass_storage/lun%d/file
 
 # Audio
@@ -102,20 +112,3 @@ TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 
 # CWM specific
 BOARD_CUSTOM_GRAPHICS:= ../../../device/huawei/hws7300u/recovery/graphics.c
-
-# TWRP specific
-# DEVICE_RESOLUTION := 1280x800
-# SP1_NAME := "cust"
-# SP1_BACKUP_METHOD := image
-# SP1_MOUNTABLE := 1
-# TW_INTERNAL_STORAGE_PATH := "/data/media"
-# TW_INTERNAL_STORAGE_MOUNT_POINT := "data"
-# TW_EXTERNAL_STORAGE_PATH := "/external_sd"
-# TW_EXTERNAL_STORAGE_MOUNT_POINT := "/external_sd"
-# TW_FLASH_FROM_STORAGE := true
-# TW_CUSTOM_BATTERY_PATH := "/sys/class/power_supply/battery_gauge/"
-# RECOVERY_SDCARD_ON_DATA := true
-
-# Hacks
-TARGET_NO_HW_VSYNC := true
-COMMON_GLOBAL_CFLAGS += -DQCOM_NO_SECURE_PLAYBACK

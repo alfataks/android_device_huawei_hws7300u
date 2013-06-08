@@ -20,6 +20,7 @@ ro.use_data_netmgrd=true
 ro.ril.hsxpa=1
 ro.ril.gprsclass=10
 ro.vendor.extension_library=/system/lib/libqc-opt.so
+ro.ril.transmitpower=true
 
 # graphics
 debug.composition.type=gpu
@@ -32,7 +33,7 @@ dev.pm.dyn_samplingrate=1
 ro.hwui.text_cache_width=2048
 persist.sys.color.enhance=true
 
-# system props for SD card emulation of emmc partition
+persist.sys.usb.config=mtp,adb
 ro.emmc.sdcard.partition=23
 
 #system props for the MM modules
@@ -46,10 +47,6 @@ media.stagefright.enable-qcp=true
 persist.audio.fluence.mode=endfire
 persist.audio.vr.enable=false
 
-# LPA
-# lpa.decode=false
-# lpa.use-stagefright=true
-
 # hdmi
 com.qc.hardware=true
 
@@ -59,16 +56,8 @@ persist.sys.chargingstart=false
 # Add To: use Sensor for the currentAppOrientation
 ro.config.hw_GSensorOptimize=true
 
-# System prop for sending transmit power request to RIL during WiFi hotspot on/off
-ro.ril.transmitpower=true
-
 # Bluetooth
 ro.bluetooth.remote.autoconnect=true
 ro.bluetooth.request.master=true
 ro.qualcomm.bluetooth.ftp=true
 ro.qualcomm.bluetooth.dun=true
-
-# MTP on default
-persist.sys.usb.config=mtp,adb
-
-

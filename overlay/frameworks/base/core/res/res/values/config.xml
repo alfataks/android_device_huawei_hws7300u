@@ -21,11 +21,11 @@
      for different hardware and product builds. -->
 <resources>
 
-    <!-- True will enable the electron beam screen-off animation. -->
-    <bool name="config_screenOffAnimation">false</bool>
-	
     <!-- NOTE: Set to true for now so electron beam isn't used. This causes a screen lockup on our QCOM's right now. -->
     <bool name="config_animateScreenLights">true</bool>
+
+    <!-- True will enable the electron beam screen-off animation. -->
+    <bool name="config_screenOffAnimation">true</bool>
 
     <!-- There is no charging LED. -->
     <bool name="config_unplugTurnsOnScreen">true</bool>
@@ -76,17 +76,17 @@
          than the size of the config_autoBrightnessLevels array.
     -->
     <integer-array name="config_autoBrightnessLcdBacklightValues">
-	<item>15</item>    <!-- 0-5 -->
-	<item>30</item>    <!-- 5-10 -->
-	<item>40</item>    <!-- 10-20 -->
-	<item>50</item>    <!-- 15-25 -->
-	<item>60</item>    <!-- 25-35 --> 
-	<item>70</item>    <!-- 35-50 -->
-	<item>80</item>    <!-- 50-70 --> 
-	<item>90</item>    <!-- 70-95 --> 
-	<item>100</item>   <!-- 95-105 -->
-	<item>130</item>   <!-- 105-130 -->
-	<item>160</item>   <!-- 130-180 -->
+	<item>30</item>    <!-- 0-25 -->
+	<item>45</item>    <!-- 25-40 -->
+	<item>55</item>    <!-- 40-50 -->
+	<item>70</item>    <!-- 50-60 -->
+	<item>85</item>    <!-- 60-70 --> 
+	<item>100</item>    <!-- 70-80 -->
+	<item>115</item>    <!-- 80-90 --> 
+	<item>130</item>   <!-- 90-100 --> 
+	<item>145</item>   <!-- 100-130 -->
+	<item>160</item>   <!-- 130-160 -->
+	<item>175</item>   <!-- 160-180 -->
 	<item>200</item>   <!-- 180-225 -->
 	<item>225</item>   <!-- 225+ -->
     </integer-array>
@@ -130,7 +130,7 @@
         <item>0</item>
         <item>0</item>
     </integer-array>
-
+    
     <!-- Minimum screen brightness setting allowed by the power manager.
          The user is forbidden from setting the brightness below this level. -->
     <integer name="config_screenBrightnessSettingMinimum">20</integer>
@@ -223,7 +223,7 @@
 
     <!--  Maximum number of supported users -->
     <integer name="config_multiuserMaximumUsers">5</integer>
-	
+
     <string-array name="config_locationProviderPackageNames" translatable="false">
         <item>com.android.location.fused</item>
         <item>com.google.android.location</item>
