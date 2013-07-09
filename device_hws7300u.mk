@@ -14,18 +14,18 @@
 # limitations under the License.
 #
 
-PRODUCT_AAPT_CONFIG := normal large mdpi hdpi tvdpi
+PRODUCT_AAPT_CONFIG := normal large tvdpi hdpi
 PRODUCT_AAPT_PREF_CONFIG := tvdpi
 
 LOCAL_PATH := device/huawei/hws7300u
   	
-ifeq ($(TARGET_PREBUILT_KERNEL),)
-PRODUCT_COPY_FILES += \
-    device/huawei/hws7300u/kernel:kernel
-    LOCAL_KERNEL := $(LOCAL_PATH)/kernel
-else
-    LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)	
-endif  	
+#ifeq ($(TARGET_PREBUILT_KERNEL),)
+#PRODUCT_COPY_FILES += \
+#    device/huawei/hws7300u/kernel:kernel
+#    LOCAL_KERNEL := $(LOCAL_PATH)/kernel
+#else
+#    LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)	
+#endif  	
 
 DEVICE_PACKAGE_OVERLAYS := \
     device/huawei/hws7300u/overlay
@@ -50,29 +50,29 @@ DEVICE_PACKAGE_OVERLAYS += device/huawei/hws7300u/overlay
 # Modules
 PRODUCT_COPY_FILES += \
     device/huawei/hws7300u/prebuilt/lib/modules/dhd.ko:system/lib/modules/dhd.ko \
-    device/huawei/hws7300u/prebuilt/lib/modules/rpc_server_handset.ko:system/lib/modules/rpc_server_handset.ko \
-    device/huawei/hws7300u/prebuilt/lib/modules/qce.ko:system/lib/modules/qce.ko \
-    device/huawei/hws7300u/prebuilt/lib/modules/sch_dsmark.ko:system/lib/modules/sch_dsmark.ko \
-    device/huawei/hws7300u/prebuilt/lib/modules/spidev.ko:system/lib/modules/spidev.ko \
-    device/huawei/hws7300u/prebuilt/lib/modules/ksapi.ko:system/lib/modules/ksapi.ko \
-    device/huawei/hws7300u/prebuilt/lib/modules/qcrypto.ko:system/lib/modules/qcrypto.ko \
-    device/huawei/hws7300u/prebuilt/lib/modules/dal_remotetest.ko:system/lib/modules/dal_remotetest.ko \
-    device/huawei/hws7300u/prebuilt/lib/modules/tsif_chrdev.ko:system/lib/modules/tsif_chrdev.ko \
-    device/huawei/hws7300u/prebuilt/lib/modules/lcd.ko:system/lib/modules/lcd.ko \
-    device/huawei/hws7300u/prebuilt/lib/modules/tun.ko:system/lib/modules/tun.ko \
-    device/huawei/hws7300u/prebuilt/lib/modules/ansi_cprng.ko:system/lib/modules/ansi_cprng.ko \
-    device/huawei/hws7300u/prebuilt/lib/modules/scsi_wait_scan.ko:system/lib/modules/scsi_wait_scan.ko \
-    device/huawei/hws7300u/prebuilt/lib/modules/librasdioif.ko:system/lib/modules/librasdioif.ko \
-    device/huawei/hws7300u/prebuilt/lib/modules/mt9m114.ko:system/lib/modules/mt9m114.ko \
-    device/huawei/hws7300u/prebuilt/lib/modules/cls_flow.ko:system/lib/modules/cls_flow.ko \
-    device/huawei/hws7300u/prebuilt/lib/modules/dma_test.ko:system/lib/modules/dma_test.ko \
-    device/huawei/hws7300u/prebuilt/lib/modules/evbug.ko:system/lib/modules/evbug.ko \
-    device/huawei/hws7300u/prebuilt/lib/modules/msm_tsif.ko:system/lib/modules/msm_tsif.ko \
-    device/huawei/hws7300u/prebuilt/lib/modules/gspca_main.ko:system/lib/modules/gspca_main.ko \
-    device/huawei/hws7300u/prebuilt/lib/modules/msm-buspm-dev.ko:system/lib/modules/msm-buspm-dev.ko \
-    device/huawei/hws7300u/prebuilt/lib/modules/qcedev.ko:system/lib/modules/qcedev.ko \
-    device/huawei/hws7300u/prebuilt/lib/modules/xpad.ko:system/lib/modules/xpad.ko \
-    device/huawei/hws7300u/prebuilt/lib/modules/ff-memless.ko:system/lib/modules/ff-memless.ko
+    device/huawei/hws7300u/prebuilt/lib/modules/rpc_server_handset.ko:system/lib/modules/rpc_server_handset.ko
+#    device/huawei/hws7300u/prebuilt/lib/modules/qce.ko:system/lib/modules/qce.ko \
+#    device/huawei/hws7300u/prebuilt/lib/modules/sch_dsmark.ko:system/lib/modules/sch_dsmark.ko \
+#    device/huawei/hws7300u/prebuilt/lib/modules/spidev.ko:system/lib/modules/spidev.ko \
+#    device/huawei/hws7300u/prebuilt/lib/modules/ksapi.ko:system/lib/modules/ksapi.ko \
+#    device/huawei/hws7300u/prebuilt/lib/modules/qcrypto.ko:system/lib/modules/qcrypto.ko \
+#    device/huawei/hws7300u/prebuilt/lib/modules/dal_remotetest.ko:system/lib/modules/dal_remotetest.ko \
+#    device/huawei/hws7300u/prebuilt/lib/modules/tsif_chrdev.ko:system/lib/modules/tsif_chrdev.ko \
+#    device/huawei/hws7300u/prebuilt/lib/modules/lcd.ko:system/lib/modules/lcd.ko \
+#    device/huawei/hws7300u/prebuilt/lib/modules/tun.ko:system/lib/modules/tun.ko \
+#    device/huawei/hws7300u/prebuilt/lib/modules/ansi_cprng.ko:system/lib/modules/ansi_cprng.ko \
+#    device/huawei/hws7300u/prebuilt/lib/modules/scsi_wait_scan.ko:system/lib/modules/scsi_wait_scan.ko \
+#    device/huawei/hws7300u/prebuilt/lib/modules/librasdioif.ko:system/lib/modules/librasdioif.ko \
+#    device/huawei/hws7300u/prebuilt/lib/modules/mt9m114.ko:system/lib/modules/mt9m114.ko \
+#    device/huawei/hws7300u/prebuilt/lib/modules/cls_flow.ko:system/lib/modules/cls_flow.ko \
+#    device/huawei/hws7300u/prebuilt/lib/modules/dma_test.ko:system/lib/modules/dma_test.ko \
+#    device/huawei/hws7300u/prebuilt/lib/modules/evbug.ko:system/lib/modules/evbug.ko \
+#    device/huawei/hws7300u/prebuilt/lib/modules/msm_tsif.ko:system/lib/modules/msm_tsif.ko \
+#    device/huawei/hws7300u/prebuilt/lib/modules/gspca_main.ko:system/lib/modules/gspca_main.ko \
+#    device/huawei/hws7300u/prebuilt/lib/modules/msm-buspm-dev.ko:system/lib/modules/msm-buspm-dev.ko \
+#    device/huawei/hws7300u/prebuilt/lib/modules/qcedev.ko:system/lib/modules/qcedev.ko \
+#    device/huawei/hws7300u/prebuilt/lib/modules/xpad.ko:system/lib/modules/xpad.ko \
+#    device/huawei/hws7300u/prebuilt/lib/modules/ff-memless.ko:system/lib/modules/ff-memless.ko
 
 # Permissions
 PRODUCT_COPY_FILES += \
@@ -91,13 +91,6 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.camera.autofocus.xml:system/etc/permissions/android.hardware.camera.autofocus.xml \
     frameworks/native/data/etc/android.hardware.sensor.accelerometer.xml:system/etc/permissions/android.hardware.sensor.accelerometer.xml \
     frameworks/native/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml
-
-# for PDK build, include only when the dir exists
-# too early to use $(TARGET_BUILD_PDK)
-ifneq ($(wildcard packages/wallpapers/LivePicker),)
-PRODUCT_COPY_FILES += \
-    packages/wallpapers/LivePicker/android.software.live_wallpaper.xml:system/etc/permissions/android.software.live_wallpaper.xml
-endif
 
 # QCOM Display
 PRODUCT_PACKAGES += \
@@ -119,6 +112,7 @@ PRODUCT_PACKAGES += \
     audio.a2dp.default \
     audio_policy.msm8660 \
     libaudioutils \
+    libaudio-resampler \
     audio.usb.default
 
 # Omx
@@ -133,6 +127,19 @@ PRODUCT_PACKAGES += \
     libOmxAmrEnc \
     libOmxEvrcEnc \
     libOmxQcelp13Enc
+
+# V4l2
+PRODUCT_PACKAGES += \
+    libv4l2 \
+    libv4l2ucp \
+    libv4l2uvc \
+    libv4l \
+    libv4ldev \
+    libv4lutils
+
+# Device specific settings
+PRODUCT_PACKAGES += \
+    MediapadSettings
 
 # GPS
 PRODUCT_PACKAGES += \
@@ -161,14 +168,10 @@ PRODUCT_PACKAGES += \
 
 # Live Wallpapers
 PRODUCT_PACKAGES += \
-    LiveWallpapers \
-    LiveWallpapersPicker \
-    VisualizationWallpapers \
     librs_jni
 
 # Filesystem management tools
 PRODUCT_PACKAGES += \
-    make_ext4fs \
     e2fsck \
     setup_fs
 
@@ -262,9 +265,10 @@ PRODUCT_COPY_FILES += \
     device/huawei/hws7300u/prebuilt/etc/audio_effects.conf:system/etc/audio_effects.conf \
     device/huawei/hws7300u/prebuilt/etc/audio_policy.conf:system/etc/audio_policy.conf
 
-# Auto loading of gamepad modules	
+# Init.d scripts	
 PRODUCT_COPY_FILES += \
-    device/huawei/hws7300u/prebuilt/etc/init.d/01x360ctrlr:system/etc/init.d/01x360ctrlr
+    device/huawei/hws7300u/prebuilt/etc/init.d/01x360ctrlr:system/etc/init.d/01x360ctrlr \
+    device/huawei/hws7300u/prebuilt/etc/init.d/02extsd:system/etc/init.d/02extsd
 
 # Misc
 PRODUCT_PROPERTY_OVERRIDES += \

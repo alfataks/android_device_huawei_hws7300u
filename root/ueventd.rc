@@ -8,6 +8,7 @@
 /dev/ashmem               0666   root       root
 /dev/binder               0666   root       root
 /dev/rtc0                 0600   system     system
+/dev/video0,1	          0666   root       root
 	  	
 # wifi  
 /dev/rfkill               0660   wifi       wifi
@@ -133,7 +134,6 @@
 /dev/block/mmcblk0p17     0660   system     system
 /dev/block/mmcblk0p18     0660   system     system
 /dev/usb_accessory        0660   root       usb
-/dev/video*	          0660   system     camera 
 /dev/tun                  0660   system     vpn
 #regular apps need to be able to open ion
 /dev/ion                  0664   media     system

@@ -1,12 +1,12 @@
-## Specify phone tech before including full_phone
-$(call inherit-product, vendor/cm/config/gsm.mk)
-
 # Boot animation	  	
 TARGET_SCREEN_HEIGHT := 1280	
 TARGET_SCREEN_WIDTH := 800
 
 # Inherit some common CM stuff.
-$(call inherit-product, vendor/cm/config/common_mini_phone.mk)
+$(call inherit-product, vendor/cm/config/common_mini_tablet_wifionly.mk)
+
+## Specify phone tech before including full_phone
+$(call inherit-product, vendor/cm/config/gsm.mk)
 
 # Inherit device configuration
 $(call inherit-product, device/huawei/hws7300u/device_hws7300u.mk)
