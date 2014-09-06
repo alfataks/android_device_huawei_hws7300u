@@ -1,7 +1,3 @@
-
-# set default lcd density to TVDPI
-ro.sf.lcd_density=213
-
 # radio
 rild.libpath=/system/lib/libril-qc-qmi-1.so
 rild.libargs=-d /dev/smd0
@@ -20,7 +16,9 @@ ro.use_data_netmgrd=true
 ro.ril.hsxpa=1
 ro.ril.gprsclass=10
 ro.vendor.extension_library=/system/lib/libqc-opt.so
-ro.ril.transmitpower=true
+
+#default lcd density to TVDPI
+ro.sf.lcd_density=213
 
 # graphics
 debug.composition.type=gpu
@@ -33,8 +31,8 @@ dev.pm.dyn_samplingrate=1
 ro.hwui.text_cache_width=2048
 persist.sys.color.enhance=true
 
-persist.sys.usb.config=mtp,adb
-ro.emmc.sdcard.partition=23
+# Hack
+persist.hw.overlay=1
 
 #system props for the MM modules
 media.stagefright.enable-player=true
@@ -56,8 +54,14 @@ persist.sys.chargingstart=false
 # Add To: use Sensor for the currentAppOrientation
 ro.config.hw_GSensorOptimize=true
 
+# System prop for sending transmit power request to RIL during WiFi hotspot on/off
+ro.ril.transmitpower=true
+
 # Bluetooth
 ro.bluetooth.remote.autoconnect=true
 ro.bluetooth.request.master=true
 ro.qualcomm.bluetooth.ftp=true
 ro.qualcomm.bluetooth.dun=true
+
+persist.sys.usb.config=mtp,adb
+ro.emmc.sdcard.partition=23

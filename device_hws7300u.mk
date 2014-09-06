@@ -39,7 +39,6 @@ PRODUCT_PROPERTY_OVERRIDES := \
 include frameworks/native/build/tablet-7in-hdpi-1024-dalvik-heap.mk
 
 # Inherit from those products. Most specific first.
-$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, device/common/gps/gps_eu_supl.mk)
 
@@ -63,7 +62,6 @@ PRODUCT_COPY_FILES += \
 #    device/huawei/hws7300u/prebuilt/lib/modules/ansi_cprng.ko:system/lib/modules/ansi_cprng.ko \
 #    device/huawei/hws7300u/prebuilt/lib/modules/scsi_wait_scan.ko:system/lib/modules/scsi_wait_scan.ko \
 #    device/huawei/hws7300u/prebuilt/lib/modules/librasdioif.ko:system/lib/modules/librasdioif.ko \
-#    device/huawei/hws7300u/prebuilt/lib/modules/mt9m114.ko:system/lib/modules/mt9m114.ko \
 #    device/huawei/hws7300u/prebuilt/lib/modules/cls_flow.ko:system/lib/modules/cls_flow.ko \
 #    device/huawei/hws7300u/prebuilt/lib/modules/dma_test.ko:system/lib/modules/dma_test.ko \
 #    device/huawei/hws7300u/prebuilt/lib/modules/evbug.ko:system/lib/modules/evbug.ko \
@@ -184,7 +182,6 @@ PRODUCT_PACKAGES += \
 
 # Boot ramdisk
 PRODUCT_COPY_FILES += \
-    device/huawei/hws7300u/root/init.emmc.rc:root/init.emmc.rc \
     device/huawei/hws7300u/root/fstab.qcom:root/fstab.qcom \
     device/huawei/hws7300u/root/ueventd.rc:root/ueventd.rc \
     device/huawei/hws7300u/root/init.hws7300u.usb.rc:root/init.hws7300u.usb.rc \
@@ -199,7 +196,6 @@ PRODUCT_COPY_FILES += \
     device/huawei/hws7300u/prebuilt/etc/init.qcom.modem_links.sh:system/etc/init.qcom.modem_links.sh \
     device/huawei/hws7300u/prebuilt/etc/init.qcom.mdm_links.sh:system/etc/init.qcom.mdm_links.sh \
     device/huawei/hws7300u/prebuilt/etc/init.qcom.coex.sh:system/etc/init.qcom.coex.sh \
-    device/huawei/hws7300u/prebuilt/etc/init.hw.insmod.sh:system/etc/init.hw.insmod.sh \
     device/huawei/hws7300u/prebuilt/etc/init.brcm.bt.sh:system/etc/init.brcm.bt.sh \
     device/huawei/hws7300u/prebuilt/etc/init.bt.sh:system/etc/init.bt.sh \
     device/huawei/hws7300u/prebuilt/etc/init.qcom.sdio.sh:system/etc/init.qcom.sdio.sh \
